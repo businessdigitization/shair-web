@@ -1,56 +1,147 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-navigation-drawer app floating clipped>
+      <v-list shaped>
+        <v-list-item v-for="item in items" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <v-app-bar color="white" app clipped-left>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+
+      <v-toolbar-title class="purple--text text--darken-3 font-weight-bold">
+        <v-icon>mdi-airplane-takeoff</v-icon>
+
+        SHAIR</v-toolbar-title
+      >
+      <v-icon>mdi-airplane-landing</v-icon>
 
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
+      <v-btn icon>
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
+
+      <v-btn icon>
+        <v-icon>mdi-account</v-icon>
       </v-btn>
     </v-app-bar>
 
     <v-main>
-      <HelloWorld />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      jhjhjh <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
 export default {
   name: 'App',
-
-  components: {
-    HelloWorld
-  },
-
-  data: () => ({
-    //
-  })
+  data() {
+    return {
+      items: [
+        { title: 'Trips', icon: 'mdi-airplane' },
+        { title: 'Packages', icon: 'mdi-bag-checked' },
+        { title: 'Bookings', icon: 'mdi-calendar-check' },
+        { title: 'Settings', icon: 'mdi-cog-outline' },
+        { title: 'Feedback', icon: 'mdi-comment-alert' },
+        { title: 'FAQ', icon: 'mdi-head-question' }
+      ]
+    }
+  }
 }
 </script>
+
+<style lang="scss">
+i.v-icon.v-icon {
+  color: #6a1b9a !important;
+}
+</style>
