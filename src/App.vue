@@ -2,11 +2,16 @@
   <v-app>
     <v-navigation-drawer app floating clipped>
       <v-list shaped>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item
+          v-for="item in navItems"
+          :key="item.title"
+          link
+          :to="item.link"
+          color="primary"
+        >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
@@ -16,13 +21,9 @@
 
     <v-app-bar color="white" app clipped-left>
       <v-app-bar-nav-icon></v-app-bar-nav-icon>
-
-      <v-toolbar-title class="purple--text text--darken-3 font-weight-bold">
-        <v-icon>mdi-airplane-takeoff</v-icon>
-
-        SHAIR</v-toolbar-title
-      >
-      <v-icon>mdi-airplane-landing</v-icon>
+      <router-link class="toolbar-title" :to="{ name: 'Trips' }">
+        <b>SHAIR</b>
+      </router-link>
 
       <v-spacer></v-spacer>
 
@@ -36,88 +37,7 @@
     </v-app-bar>
 
     <v-main>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      jhjhjh <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <router-view />
     </v-main>
   </v-app>
 </template>
@@ -127,13 +47,13 @@ export default {
   name: 'App',
   data() {
     return {
-      items: [
-        { title: 'Trips', icon: 'mdi-airplane' },
-        { title: 'Packages', icon: 'mdi-bag-checked' },
-        { title: 'Bookings', icon: 'mdi-calendar-check' },
-        { title: 'Settings', icon: 'mdi-cog-outline' },
-        { title: 'Feedback', icon: 'mdi-comment-alert' },
-        { title: 'FAQ', icon: 'mdi-head-question' }
+      navItems: [
+        { title: 'Trips', icon: 'mdi-airplane', link: 'www.radio.com' },
+        { title: 'Packages', icon: 'mdi-bag-checked', link: 'www.google.com' },
+        { title: 'Bookings', icon: 'mdi-calendar-check', link: '#' },
+        { title: 'Settings', icon: 'mdi-cog-outline', link: '#' },
+        { title: 'Feedback', icon: 'mdi-comment-alert', link: '#' },
+        { title: 'FAQ', icon: 'mdi-head-question', link: '#' }
       ]
     }
   }
@@ -141,7 +61,8 @@ export default {
 </script>
 
 <style lang="scss">
-i.v-icon.v-icon {
-  color: #6a1b9a !important;
+.toolbar-title {
+  color: inherit;
+  text-decoration: inherit;
 }
 </style>
