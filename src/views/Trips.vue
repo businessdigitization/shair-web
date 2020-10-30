@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <v-container fill-height>
     <SearchBox />
-  </div>
+  </v-container>
 </template>
 
 <script>
