@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import SearchBox from '@/components/SearchBox.vue'
+import SearchBox from '@/components/trips/SearchBox.vue'
 
 export default {
   name: 'Trips',

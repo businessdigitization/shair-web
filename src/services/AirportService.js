@@ -11,7 +11,6 @@ const apiClient = axios.create({
 
 export default {
   search(value) {
-    console.log(value)
     return apiClient.get('/?query=' + value)
   }
 }

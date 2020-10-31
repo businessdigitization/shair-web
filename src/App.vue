@@ -54,8 +54,8 @@ export default {
   data() {
     return {
       navItems: [
-        { title: 'Trips', icon: 'mdi-airplane', link: 'www.espncricinfo.com' },
-        { title: 'Packages', icon: 'mdi-bag-checked', link: 'About' },
+        { title: 'Trips', icon: 'mdi-airplane', link: '/' },
+        { title: 'Packages', icon: 'mdi-bag-checked', link: '/about' },
         { title: 'Bookings', icon: 'mdi-calendar-check', link: '#' },
         { title: 'Settings', icon: 'mdi-cog-outline', link: '#' },
         { title: 'Feedback', icon: 'mdi-comment-alert', link: '#' },
