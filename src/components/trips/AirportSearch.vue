@@ -13,7 +13,7 @@
       item-value="code"
       :label="label"
       :prepend-icon="icon"
-      @input="emitEvent"
+      @input="$emit('airport-select', model)"
     ></v-autocomplete>
   </v-card-text>
 </template>
@@ -50,7 +50,7 @@ export default {
 
       this.isLoading = true
 
-      AirportService.search(value)
+      AirportService.airportSearch(value)
         .then(response => {
           this.entries = response.data
         })
@@ -59,13 +59,6 @@ export default {
         })
         .finally(() => (this.isLoading = false))
     }
-  },
-
-  methods: {
-    emitEvent() {
-      this.$emit('airport-select', this.model)
-    }
   }
 }
 </script>
-<style lang="scss" scoped></style>

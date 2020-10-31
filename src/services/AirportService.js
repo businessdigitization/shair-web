@@ -1,16 +1,17 @@
-import axios from 'axios'
-
-const apiClient = axios.create({
-  baseURL: 'http://localhost:3000/api/v1/airports/search',
-  withCredentials: false,
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  }
-})
+import { apiClient } from '@/services/ApiClient.js'
 
 export default {
-  search(value) {
-    return apiClient.get('/?query=' + value)
+  airportSearch(value) {
+    return apiClient.get('airports/search?query=' + value)
+  },
+  tripSearch(searchArgs) {
+    const origin_code = searchArgs.origin_airport_code
+    const destination_code = searchArgs.destination_airport_code
+    const query =
+      '/?origin_airport_code=' +
+      origin_code +
+      '&destination_airport_code=' +
+      destination_code
+    return apiClient.get(query)
   }
 }
