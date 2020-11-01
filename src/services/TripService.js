@@ -1,7 +1,7 @@
 import { apiClient } from '@/services/ApiClient.js'
 
 export default {
-  tripSearch(searchArgs) {
+  search(searchArgs) {
     // const origin_code = searchArgs.origin_airport_code
     // const destination_code = searchArgs.destination_airport_code
     // const query =

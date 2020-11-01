@@ -50,7 +50,7 @@ export default {
 
       this.isLoading = true
 
-      AirportService.airportSearch(value)
+      AirportService.search(value)
         .then(response => {
           this.entries = response.data
         })

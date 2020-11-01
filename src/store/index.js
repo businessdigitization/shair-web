@@ -6,18 +6,18 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    tripSearchArgs: {}
+    trips: []
   },
   mutations: {
-    SET_DESTINATION_CODE(state, searchArgs) {
-      state.tripSearchArgs = searchArgs
+    SET_TRIPS(state, trips) {
+      state.trips = trips
     }
   },
   actions: {
     searchTrips({ commit }, searchArgs) {
-      commit('SET_DESTINATION_CODE', searchArgs)
-      TripService.tripSearch(searchArgs).then(response => {
+      TripService.search(searchArgs).then(response => {
         console.log(response)
+        commit('SET_TRIPS', response.data)
       })
     }
   },
