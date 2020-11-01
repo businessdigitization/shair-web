@@ -53,7 +53,7 @@ export default {
       console.log(this.searchArgs.date)
     },
     search() {
-      this.$store.dispatch('searchTrips', this.searchArgs)
+      this.$store.dispatch('trip/search', this.searchArgs)
     }
   }
 }
