@@ -13,7 +13,6 @@
             icon="mdi-airplane-landing"
             @airport-select="setDestination"
           />
-          <DatePicker @date-select="setDate" />
         </div>
         <v-card-text class="d-flex justify-center pb-5">
           <v-btn @click="search" large color="primary">
@@ -30,7 +29,6 @@
 
 <script>
 import AirportSearch from '@/components/common/AirportSearch'
-import DatePicker from '@/components/common/DatePicker'
 
 export default {
   data: () => ({
@@ -40,7 +38,7 @@ export default {
       date: null
     }
   }),
-  components: { AirportSearch, DatePicker },
+  components: { AirportSearch },
   methods: {
     setOrigin(code) {
       this.searchArgs.origin_airport_code = code
@@ -48,12 +46,9 @@ export default {
     setDestination(code) {
       this.searchArgs.destination_airport_code = code
     },
-    setDate(date) {
-      this.searchArgs.date = date
-      console.log(this.searchArgs.date)
-    },
+
     search() {
-      this.$store.dispatch('trip/search', this.searchArgs)
+      this.$store.dispatch('parcel/search', this.searchArgs)
     }
   }
 }

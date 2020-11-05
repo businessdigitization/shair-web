@@ -55,7 +55,7 @@ export default {
     return {
       navItems: [
         { title: 'Trips', icon: 'mdi-airplane', link: '/' },
-        { title: 'Packages', icon: 'mdi-bag-checked', link: '/about' },
+        { title: 'Parcels', icon: 'mdi-bag-checked', link: '/parcels' },
         { title: 'Bookings', icon: 'mdi-calendar-check', link: '#' },
         { title: 'Settings', icon: 'mdi-cog-outline', link: '#' },
         { title: 'Feedback', icon: 'mdi-comment-alert', link: '#' },

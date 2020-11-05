@@ -20,7 +20,6 @@
 
 <script>
 import AirportService from '@/services/AirportService.js'
-// import { mapState } from 'vuex'
 
 export default {
   props: ['label', 'icon', 'searchFor'],

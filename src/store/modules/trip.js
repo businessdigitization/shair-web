@@ -17,5 +17,10 @@ export default {
         commit('SET_TRIPS', response.data)
       })
     }
+  },
+  getters: {
+    isLastTrip: state => trip => {
+      return state.trips[state.trips.length - 1] == trip
+    }
   }
 }

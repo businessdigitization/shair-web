@@ -1,16 +1,45 @@
 <template>
-  <v-container fill-height>
+  <v-container>
     <SearchBox />
+    <v-expand-transition>
+      <v-row v-show="hasTrips">
+        <v-col>
+          <v-card>
+            <v-card-title>
+              Available Trips
+            </v-card-title>
+
+            <SearchResult
+              v-for="trip in trips"
+              :key="trip.id"
+              :trip="trip"
+              :isLastTrip="isLastTrip(trip)"
+            />
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-expand-transition>
   </v-container>
 </template>
 
 <script>
 import SearchBox from '@/components/trips/SearchBox.vue'
+import SearchResult from '@/components/trips/SearchResult.vue'
+
+import { mapState, mapGetters } from 'vuex'
 
 export default {
   name: 'Trips',
+  computed: {
+    hasTrips() {
+      return this.trips.length > 0
+    },
+    ...mapState('trip', ['trips']),
+    ...mapGetters('trip', ['isLastTrip'])
+  },
   components: {
-    SearchBox
+    SearchBox,
+    SearchResult
   }
 }
 </script>
