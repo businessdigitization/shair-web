@@ -19,6 +19,16 @@
         </v-col>
       </v-row>
     </v-expand-transition>
+    <v-row>
+      <v-col>
+        <v-btn large outlined color="primary" class="float-right">
+          <v-icon dark>
+            mdi-plus
+          </v-icon>
+          Add a trip
+        </v-btn>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

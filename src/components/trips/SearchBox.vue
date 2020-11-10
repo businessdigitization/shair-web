@@ -15,8 +15,8 @@
           />
           <DatePicker @date-select="setDate" />
         </div>
-        <v-card-text class="d-flex justify-center pb-5">
-          <v-btn @click="search" large color="primary">
+        <v-card-text class="d-flex justify-end pb-5">
+          <v-btn @click="search" large color="primary" outlined>
             <v-icon dark>
               mdi-magnify
             </v-icon>
