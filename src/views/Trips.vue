@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fill-height>
     <SearchBox />
     <v-expand-transition>
       <v-row v-show="hasTrips">
